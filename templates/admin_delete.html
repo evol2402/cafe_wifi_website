@@ -1,0 +1,68 @@
+{% include 'header.html' %}
+
+<body class="blog-page">
+
+<header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="{{ url_for('home') }}" class="logo d-flex align-items-center">
+        <h1 class="sitename" style="color:#f2e6d9">BeanSeeker</h1>
+      </a>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </div>
+</header>
+<main class="main">
+    <div class="page-title dark-background">
+      <div class="container position-relative">
+        <h1>Manage Café</h1>
+        <p>If you would like to update information about a café or request its deletion, please provide the details below. Your feedback is valuable to us, and we will reach out to you soon.</p>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li class="current">Manage Café</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Delete Confirmation Section -->
+    <section id="delete-cafe" class="section">
+      <div class="container">
+        <div class="section-header">
+        <h2>Manage Café Information</h2>
+        <p>Please provide the details below to update information about the café or request its deletion.</p>
+        </div>
+
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="alert alert-info">
+              {% for message in messages %}
+                <p>{{ message }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        <form action="{{ url_for('admin_delete_cafe') }}" method="post">
+          {{ form.hidden_tag() }}
+
+
+          <div class="mb-3">
+            {{ form.cafe_id.label(class="form-label") }}
+            {{ form.cafe_id(class="form-control") }}
+          </div>
+
+
+          <div class="mb-3">
+            {{ form.reason.label(class="form-label") }}
+            {{ form.reason(class="form-control", rows=3) }}
+          </div>
+
+          <div class="text-center">
+            {{ form.submit(class="btn btn-danger", style="background-color: #E26300; border-color: #E26300;") }}
+          </div>
+        </form>
+      </div>
+    </section>
+</main>
+{% include 'footer.html' %}
+

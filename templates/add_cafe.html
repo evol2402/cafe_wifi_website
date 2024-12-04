@@ -1,0 +1,122 @@
+{% include 'header.html' %}
+
+<body class="blog-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="{{ url_for('home') }}" class="logo d-flex align-items-center">
+        <h1 class="sitename" style="color:#f2e6d9">BeanSeeker</h1>
+      </a>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="page-title dark-background">
+      <div class="container position-relative">
+        <h1>Add Your Favorite Café</h1>
+        <p>Share your favorite cafés with the community! Whether it's a hidden gem or a local favorite, submit the details below to help others discover great places for coffee.</p>
+
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li class="current">Add New Cafe</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Add New Cafe Section -->
+    <section id="add-cafe" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Add a New Café</h2>
+          <p>Share your favorite café with others by filling in the details below.</p>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <div class="alert alert-info">
+              {% for category, message in messages %}
+                <p class="{{ category }}">{{ message }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        <!-- Add Cafe Form -->
+        <form action="{{ url_for('add_cafe') }}" method="post">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="cafe-name">Café Name</label>
+              <input type="text" id="cafe-name" name="name" class="form-control" placeholder="Enter the café name" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="cafe-location">Location</label>
+              <input type="text" id="cafe-location" name="location" class="form-control" placeholder="Enter the café location" required>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="seats">Number of Seats</label>
+              <input type="number" id="seats" name="seats" class="form-control" placeholder="Number of seats" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="coffee-price">Coffee Price (per cup)</label>
+              <input type="text" id="coffee-price" name="coffee_price" class="form-control" placeholder="Enter coffee price" required>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3 mb-3">
+              <label for="wifi">WiFi Available</label>
+              <select id="wifi" name="has_wifi" class="form-select" required>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+              </select>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="sockets">Power Sockets Available</label>
+              <select id="sockets" name="has_sockets" class="form-select" required>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+              </select>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="calls">Call-Friendly</label>
+              <select id="calls" name="can_take_calls" class="form-select" required>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+              </select>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="toilet">Toilets Available</label>
+              <select id="toilet" name="has_toilet" class="form-select" required>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="map-url">Map URL</label>
+            <input type="url" id="map-url" name="map_url" class="form-control" placeholder="Google Maps link for the café" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="image-url">Image URL</label>
+            <input type="url" id="image-url" name="img_url" class="form-control" placeholder="Image URL for the café" required>
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary" style="background-color: #E26300; border-color: #E26300;">Submit Café</button>
+          </div>
+        </form>
+
+      </div>
+    </section>
+  </main>
+
+  {% include 'footer.html' %}

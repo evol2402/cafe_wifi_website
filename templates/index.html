@@ -1,0 +1,342 @@
+{%include 'header.html'%}
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="{{url_for('home')}}" class="logo d-flex align-items-center">
+
+        <h1 class="sitename" style="color:#f2e6d9">BeanSeeker</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Explore</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <div id="hero-carousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
+
+      <!-- Slide 1 -->
+<div class="carousel-item active">
+    <div class="carousel-container">
+        <h2 class="animate__animated animate__fadeInDown">Co-work, <span>Everywhere</span></h2>
+        <p class="animate__animated animate__fadeInUp">From coffee shops to hotel lobbies, discover everyday places to work and connect. Find your perfect spot to be productive and inspired, no matter where you are.</p>
+        <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Know More</a>
+        <i class="fa fa-coffee coffee-icon animate__animated animate__fadeInUp"></i> <!-- Coffee icon -->
+    </div>
+</div>
+
+<!-- Slide 2 -->
+<div class="carousel-item ">
+  <div class="carousel-container">
+    <h2 class="animate__animated animate__fadeInDown">Find Your Perfect Café</h2>
+    <p class="animate__animated animate__fadeInUp">Explore a curated list of local cafés, discover new flavors, and enjoy the ambiance of your favorite spots. Join our community of coffee lovers today!</p>
+    <a href="{{url_for('cafe_listings')}}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Explore</a>
+    <i class="fas fa-mug-hot coffee-icon animate__animated animate__fadeInUp"></i>
+  </div>
+</div>
+
+<!-- Slide 3 -->
+<div class="carousel-item">
+  <div class="carousel-container">
+    <h2 class="animate__animated animate__fadeInDown">Join the Café Community</h2>
+    <p class="animate__animated animate__fadeInUp">Share your experiences and reviews with others. Add your favorite cafés and help fellow enthusiasts find their next great coffee experience!</p>
+    <a href="{{url_for('delete_cafe')}}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Make Changes</a>
+    <i class="fa fa-search coffee-icon animate__animated animate__fadeInUp"></i>
+  </div>
+</div>
+
+        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+      </div>
+
+      <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+        <defs>
+          <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+        </defs>
+        <g class="wave1">
+          <use xlink:href="#wave-path" x="50" y="3"></use>
+        </g>
+        <g class="wave2">
+          <use xlink:href="#wave-path" x="50" y="0"></use>
+        </g>
+        <g class="wave3">
+          <use xlink:href="#wave-path" x="50" y="9"></use>
+        </g>
+      </svg>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+    <h2>About</h2>
+    <p>Who we are</p>
+</div><!-- End Section Title -->
+
+<div class="container">
+    <div class="row gy-4">
+        <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+            <p>
+                Welcome to our cafe locator website, where you can discover your favorite coffee shops and explore new ones! Our platform displays a curated list of cafes, making it easier for you to find the perfect spot to relax, work, or meet friends.
+            </p>
+            <ul>
+                <li><i class="bi bi-check2-circle"></i> <span>Browse a comprehensive list of cafes in your area.</span></li>
+                <li><i class="bi bi-check2-circle"></i> <span>Submit new cafe listings to share your favorites with the community.</span></li>
+                <li><i class="bi bi-check2-circle"></i> <span>Remove cafes that are no longer in service or need updates.</span></li>
+            </ul>
+        </div>
+
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <p>
+                Our platform not only showcases existing cafes but also encourages users to contribute by adding new cafes to the list. Whether you’re looking for a cozy spot to enjoy a cup of coffee or a vibrant cafe to work in, we’ve got you covered. Join our community and help us build a comprehensive directory of cafes for everyone to enjoy!
+            </p>
+<!--            <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>-->
+        </div>
+    </div>
+</div>
+<!-- /About Section -->
+
+<!-- Features Section -->
+<section id="features" class="features section">
+    <div class="container">
+        <ul class="nav nav-tabs row d-flex" data-aos="fade-up" data-aos-delay="100">
+            <li class="nav-item col-3" role="presentation">
+                <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1">
+                    <i class="bi bi-graph-up"></i> <!-- Productivity Icon -->
+                    <h4 class="d-none d-lg-block">Be Productive</h4>
+                </a>
+            </li>
+            <li class="nav-item col-3" role="presentation">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2">
+                    <i class="bi bi-house-heart"></i> <!-- Welcoming Cafe Icon -->
+                    <h4 class="d-none d-lg-block">Feel Welcome</h4>
+                </a>
+            </li>
+            <li class="nav-item col-3" role="presentation">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3">
+                    <i class="bi bi-lightbulb"></i> <!-- Inspiration Icon -->
+                    <h4 class="d-none d-lg-block">Stay Inspired</h4>
+                </a>
+            </li>
+            <li class="nav-item col-3" role="presentation">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-4">
+                    <i class="bi bi-pencil-square"></i> <!-- Innovation Icon -->
+                    <h4 class="d-none d-lg-block">Be Innovative</h4>
+                </a>
+            </li>
+        </ul>
+        <!-- End Tab Nav -->
+
+        <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+            <!-- Tab Content 1 -->
+            <div class="tab-pane fade active show" id="features-tab-1">
+                <div class="row">
+                    <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                        <h3>Maximize Your Productivity in Cafes</h3>
+                        <p class="fst-italic">
+                            Discover how working in cafes can enhance your focus and creativity while providing a comfortable atmosphere.
+                        </p>
+                        <ul>
+                            <li><i class="bi bi-check2-all"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Enjoy a change of scenery that can help clear your mind.</li>
+                            <li><i class="bi bi-check2-all"></i> Duis aute irure dolor in reprehenderit in voluptate velit. Experience vibrant environments that inspire creativity.</li>
+                            <li><i class="bi bi-check2-all"></i> Stay productive with reliable Wi-Fi and delicious coffee to keep you energized.</li>
+                        </ul>
+                        <p>
+                            Cafes often provide the perfect balance of energy and comfort. With a great atmosphere, you can work efficiently and enjoy a cup of coffee or tea. Plus, the opportunity to meet like-minded individuals can lead to networking and collaboration.
+                        </p>
+                        <p>
+                            Explore various cafes in your area, find your favorite spots, and make your work sessions more enjoyable and productive!
+                        </p>
+                    </div>
+                    <div class="col-lg-6 order-1 order-lg-2 text-center">
+                        <img src="static/assets/img/working-1.jpg" alt="Working in a Cafe" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <!-- End Tab Content 1 -->
+
+            <!-- Tab Content 2 -->
+            <div class="tab-pane fade" id="features-tab-2">
+                <div class="row">
+                    <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                        <h3>Create a Welcoming Atmosphere</h3>
+                        <p>
+                            In cafes, every detail is designed to make you feel at home. From cozy seating arrangements to the aroma of freshly brewed coffee, these spaces are perfect for relaxation and productivity. Cafes strive to create an environment where everyone feels welcomed and valued.
+                        </p>
+                        <p class="fst-italic">
+                            Experience a blend of comfort and community while enjoying your favorite beverages and snacks.
+                        </p>
+                        <ul>
+                            <li><i class="bi bi-check2-all"></i> Friendly staff that greet you with a smile and make your experience enjoyable.</li>
+                            <li><i class="bi bi-check2-all"></i> Cozy seating areas that invite you to settle in and unwind.</li>
+                            <li><i class="bi bi-check2-all"></i> Community events and gatherings that foster connection among patrons.</li>
+                            <li><i class="bi bi-check2-all"></i> Comfortable Wi-Fi access, making it easy to work or socialize.</li>
+                        </ul>
+                        <p>
+                            Whether you're catching up with friends or focusing on work, cafes offer a welcoming escape from the hustle and bustle of everyday life. Immerse yourself in a space where creativity and comfort intertwine, and feel free to linger as long as you like.
+                        </p>
+                    </div>
+                    <div class="col-lg-6 order-1 order-lg-2 text-center">
+                        <img src="static/assets/img/working-2.jpg" alt="Cafe Ambiance" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <!-- End Tab Content 2 -->
+
+            <!-- Tab Content 3 -->
+            <div class="tab-pane fade" id="features-tab-3">
+                <div class="row">
+                    <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                        <h3>Stay Inspired in Every Sip</h3>
+                        <p>
+                            Cafes are more than just places to grab a cup of coffee; they are havens for creativity and inspiration. Surrounded by the hustle and bustle of life, the ambiance of a cafe can spark new ideas and fuel your imagination.
+                        </p>
+                        <ul>
+                            <li><i class="bi bi-check2-all"></i> Uplifting music and vibrant conversations that stimulate your mind.</li>
+                            <li><i class="bi bi-check2-all"></i> Beautifully designed interiors that spark creativity.</li>
+                            <li><i class="bi bi-check2-all"></i> Inspiring decor featuring local artists and community highlights.</li>
+                        </ul>
+                        <p class="fst-italic">
+                            Immerse yourself in a culture of creativity, where ideas flow as freely as the coffee.
+                        </p>
+                        <p>
+                            Let the ambiance of the cafe inspire you to push your boundaries, embrace new perspectives, and discover innovative solutions.
+                        </p>
+                    </div>
+                    <div class="col-lg-6 order-1 order-lg-2 text-center">
+                        <img src="static/assets/img/working-3.jpg" alt="Inspiration in Cafe" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <!-- End Tab Content 3 -->
+
+            <!-- Tab Content 4 -->
+            <div class="tab-pane fade" id="features-tab-4">
+                <div class="row">
+                    <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                        <h3>Be Innovative: Fuel Your Creativity</h3>
+                        <p>
+                            In the dynamic atmosphere of a cafe, innovation thrives. These spaces are not only great for enjoying your favorite brew, but they also serve as incubators for fresh ideas and creative solutions.
+                        </p>
+                        <ul>
+                            <li><i class="bi bi-check2-all"></i> Dynamic environment that encourages out-of-the-box thinking.</li>
+                            <li><i class="bi bi-check2-all"></i> Opportunities for collaboration with fellow innovators and creatives.</li>
+                            <li><i class="bi bi-check2-all"></i> Access to a diverse range of ideas and perspectives in one space.</li>
+                        </ul>
+                        <p class="fst-italic">
+                            Embrace the potential for collaboration and creativity that cafes offer, turning a simple coffee break into a brainstorming session.
+                        </p>
+                    </div>
+                    <div class="col-lg-6 order-1 order-lg-2 text-center">
+                        <img src="static/assets/img/working-4.jpg" alt="Innovative Thinking in Cafe" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <!-- End Tab Content 4 -->
+        </div>
+    </div>
+</section>
+<!-- /Features Section -->
+
+    <!-- Call To Action Section -->
+        <section id="call-to-action" class="call-to-action section dark-background">
+
+      <div class="container">
+
+     <div class="row" data-aos="zoom-in" data-aos-delay="100">
+    <div class="col-xl-9 text-center text-xl-start">
+        <h3>Join the Remote Worker Revolution</h3>
+        <p>
+            LaptopFriendly partners with local venues that appreciate and support the remote worker culture. Each location is carefully inspected and manually approved by our curation team, ensuring a conducive environment for productivity and creativity. Discover spaces that not only welcome you but enhance your working experience.
+        </p>
+    </div>
+    <div class="col-xl-3 cta-btn-container text-center">
+
+    <i class="bi bi-geo-alt" style="font-size: 5rem;"></i>
+
+    </div>
+</div>
+
+
+      </div>
+
+    </section><!-- /Call To Action Section -->
+
+ <!-- Services Section -->
+<section id="services" class="services section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Our Services</h2>
+    <p>What we offer for café lovers</p>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+    <div class="row gy-4">
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="bi bi-cup" style="color: #0dcaf0;"></i>
+          </div>
+          <a href="{{url_for('cafe_listings')}}" class="stretched-link">
+            <h3>Café Listings</h3>
+          </a>
+          <p>Explore our extensive list of cafés, complete with locations, ratings, and user reviews.</p>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="bi bi-plus-circle" style="color: #fd7e14;"></i>
+          </div>
+          <a href="{{url_for('add_cafe')}}" class="stretched-link">
+            <h3>Add New Cafés</h3>
+          </a>
+          <p>Contribute to our community by adding new cafés with details like name, location, and description.</p>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="bi bi-trash" style="color: #20c997;"></i>
+          </div>
+          <a href="{{url_for('delete_cafe')}}" class="stretched-link">
+         <h3>Manage Cafés</h3>
+          </a>
+          <p>Help keep our listings up to date by updating café information or removing cafés that are closed or no longer operating.</p>
+        </div>
+      </div><!-- End Service Item -->
+
+    </div>
+  </div>
+
+</section><!-- /Services Section -->
+
+
+
+  </main>
+{%include 'footer.html'%}

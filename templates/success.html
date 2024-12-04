@@ -1,0 +1,39 @@
+{% include 'header.html' %}
+
+<body class="blog-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="{{ url_for('home') }}" class="logo d-flex align-items-center">
+        <h1 class="sitename"  style="color:#f2e6d9">BeanSeeker</h1>
+      </a>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="page-title dark-background">
+      <div class="container position-relative">
+        <h1>Success!</h1>
+        <p>Your café has been added successfully.</p>
+      </div>
+    </div>
+
+    <section id="success-message" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Thank You!</h2>
+          <p>Your café has been added to our listings. You can now view it or add more cafés if you'd like.</p>
+        </div>
+
+        <div class="text-center">
+          <a href="{{ url_for('add_cafe') }}" class="btn btn-accent">Add Another Café</a>
+          <a href="{{ url_for('cafe_listings') }}" class="btn btn-surface">View Café Listings</a>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+{% include 'footer.html' %}
