@@ -24,6 +24,15 @@ This app is designed for coffee lovers of all levels, from casual drinkers looki
 
 Screenshots
 
+![image](https://github.com/user-attachments/assets/35736eca-5b15-4e53-b9bc-54830cdd001e)
 
-Link
-The Coffee App can be explored further through the provided link (if applicable).
+![image](https://github.com/user-attachments/assets/dbf1e0ba-4cdb-4d27-98aa-f2969ed6a21e)
+
+![image](https://github.com/user-attachments/assets/19066451-2be4-4583-8e9d-6f7a24a15483)
+
+![image](https://github.com/user-attachments/assets/cef1eaec-3e08-4323-b0a5-0bf42cabbd6b)
+
+![image](https://github.com/user-attachments/assets/2463a152-3f4e-425f-8220-0a334c2dd282)
+
+
+
